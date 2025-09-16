@@ -1,0 +1,1266 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Malik Huzaifa - Web Developer Portfolio" name="description" />
+    <title>MALIK HUZAIFA - Web Developer</title>
+    <!-- Fav Icon -->
+      <link href="assets/imgs/logo/M.webp" rel="icon" type="image/x-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+<!-- All CSS files -->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/css/all.min.css" rel="stylesheet"/>
+<link href="assets/css/swiper-bundle.min.css" rel="stylesheet"/>
+<link href="assets/css/progressbar.css" rel="stylesheet"/>
+<link href="assets/css/meanmenu.min.css" rel="stylesheet"/>
+<link href="assets/css/master.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+
+    <style>
+      
+        *{
+            scroll-behavior: smooth;
+        }
+
+        #bubble-canvas {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.hero__area-3{
+    height: 600px;
+}
+
+.header__area-3 {
+  height: 90px;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  .sec-title {
+    font-size: 48px;
+  }
+
+  .sec-sub-title {
+    font-size: 18px;
+  }
+
+  
+  #bubble-canvas {
+    top: 60px;
+    height: 70vh;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .sec-title {
+    font-size: 36px;
+  }
+
+  .sec-sub-title {
+    font-size: 16px;
+  }
+
+  #bubble-canvas {
+    top: 50px;
+    height: 60vh;
+  }
+}
+
+
+.certificate-img {
+  width: 120px;     
+  height: 120px;
+  /* border-radius: 50%; */
+  object-fit: cover;  
+ 
+}
+
+.small-btn {
+  padding: 6px 10px;  
+  font-size: 14px;    
+}
+
+        .portfolio__item img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+    </style>
+
+<!-- Persistent dark-mode script added by patch -->
+<script>
+(function(){
+  try{
+    // read saved mode
+    var saved = localStorage.getItem('site-theme');
+    var root = document.documentElement || document.getElementsByTagName('html')[0];
+    if(saved === 'dark') root.classList.add('dark-mode');
+    // Expose a toggle function if not present
+    if(!window.toggleDarkMode){
+      window.toggleDarkMode = function(force){
+        if(typeof force === 'string'){
+          if(force === 'dark') { root.classList.add('dark-mode'); localStorage.setItem('site-theme','dark'); return; }
+          if(force === 'light'){ root.classList.remove('dark-mode'); localStorage.setItem('site-theme','light'); return; }
+        }
+        root.classList.toggle('dark-mode');
+        localStorage.setItem('site-theme', root.classList.contains('dark-mode') ? 'dark' : 'light');
+      };
+    }
+  }catch(e){console && console.warn && console.warn('dark-mode script error', e);}
+})();
+</script>
+
+</head>
+
+<body>
+    <!-- Cursor Animation -->
+    <div class="cursor1"></div>
+    <div class="cursor2"></div>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loading">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+            <div class="bar bar4"></div>
+            <div class="bar bar5"></div>
+            <div class="bar bar6"></div>
+            <div class="bar bar7"></div>
+            <div class="bar bar8"></div>
+        </div>
+    </div>
+    <!-- Switcher Area Start -->
+    <div class="switcher__area">
+        <div class="switcher__icon">
+            <button id="switcher_open"><i class="fa-solid fa-gear"></i></button>
+            <button id="switcher_close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="switcher__items">
+            <div class="switcher__item">
+                <div class="switch__title-wrap">
+                    <h2 class="switcher__title">Cursor</h2>
+                </div>
+                <div class="switcher__btn">
+                    <select id="cursor_style" name="cursor-style">
+                        <option value="1">default</option>
+                        <option selected="" value="2">animated</option>
+                    </select>
+                </div>
+            </div>
+            <div class="switcher__item">
+                <div class="switch__title-wrap">
+                    <h2 class="switcher__title">mode</h2>
+                </div>
+                <div class="switcher__btn mode-type wc-col-2">
+                    <button class="active" data-mode="light">light</button>
+                    <button data-mode="dark">dark</button>
+                </div>
+            </div>
+            <div class="switcher__item">
+                <div class="switch__title-wrap">
+                    <h2 class="switcher__title">Language Support</h2>
+                </div>
+                <div class="switcher__btn lang_dir wc-col-2">
+                    <button class="active" data-mode="ltr">AR</button>
+                    <button data-mode="rtl">EN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Switcher Area End -->
+    <!-- Scroll Smoother -->
+    <div class="has-smooth" id="has_smooth"></div>
+ 
+    <button class="scroll-top" id="scroll_top"><i class="fa-solid fa-arrow-up"></i></button>
+    <!-- Header area start -->
+    <div class="experience"></div>
+    <!-- === SECTION START: <header> — purpose: header block === -->
+    <header class="header__area-3">
+        <div class="header__inner-3">
+            <!-- Logo -->
+            <div class="header__logo-2">
+                <div class="navigation__logo">
+                    <a href="index.html">
+                   <img loading="lazy" alt="Logo" src="assets/imgs/logo/M-removebg-preview.webp"
+                        style="width:50px; height:50px; margin-top: 10px; object-fit:contain;" /></a>
+                </div>
+            </div>
+            <!-- Navigation -->
+            <div class="header__nav-2">
+                <ul class="main-menu-3 menu-anim">
+                    <li class="has-megamenu"><a href="#">home</a>
+                    </li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li class="has-megamenu"><a href="#about">about me</a></li>
+                    <li><a href="#services">services</a>
+                       
+                    </li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </div>
+            <!-- Nav Icons -->
+            <div class="header__nav-icon-3">
+                <button class="search-icon" id="search_icon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="search-icon" id="search_close"><i class="fa-solid fa-xmark"></i></button>
+                <button id="open_offcanvas"><img alt="Menubar Icon" src="assets/imgs/icon/menu-black.png" /></button>
+            </div>
+        </div>
+    </header>
+    <!-- Search -->
+    <div class="header__search">
+        <!-- === SECTION START: <form> — purpose: form block === -->
+        <form action="#">
+            <input id="s" name="s" placeholder="Search.." type="text" />
+        </form>
+    </div>
+    <!-- Header area end -->
+    <!-- Offcanvas area start -->
+    <div class="offcanvas__area">
+        <div class="offcanvas__body">
+            <div class="offcanvas__left">
+                <!-- Offcanvas Logo -->
+                <div class="navigation__logo">
+
+                    
+                     <img loading="lazy" alt="Logo" src="assets/imgs/logo/M-removebg-preview1.webp"
+                        style="width:100px; height:100px; object-fit:contain; margin-left: 40px;" />
+                </div>
+                <!-- Social -->
+                <div class="offcanvas__social">
+                    <h3 class="social-title">Follow Me</h3>
+                    <ul>
+                        <li><a href="#">Dribbble</a></li>
+                        <li><a href="#">Behance</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/in/huzaifa-ahmad-3b7230285/?profileId=ACoAAEVEXTsB5UyP_wz3T_XWhfdFyKLQci7Xcmo">LinkedIn</a></li>
+                        <li><a href="https://github.com/malikhuzaifaahmed8">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <!-- Links -->
+                <div class="offcanvas__links">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">contact</a></li>
+                        <li><a href="#services">services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="offcanvas__mid">
+                <div class="offcanvas__menu-wrapper">
+                    <!-- === SECTION START: <nav> — purpose: nav block === -->
+                    <nav class="offcanvas__menu">
+                        <ul class="menu-anim">
+                            <li><a>home</a>
+                              
+                            </li>
+                            <li><a href="#portfolio">portfolio</a></li>
+                            <li><a href="#about">about me</a></li>
+                            <li><a>services</a>
+                               
+                            </li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#contact">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- Close button -->
+            <div class="offcanvas__close">
+                <button id="close_offcanvas" type="button"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- Offcanvas area end -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <!-- === SECTION START: <main> — purpose: main block === -->
+            <main>
+                <!-- Hero area start -->
+                <!-- Bubble Canvas -->
+    <!-- Bubble Canvas -->
+  <canvas id="bubble-canvas"></canvas>
+
+  <!-- Hero Section -->
+  <section class="hero__area-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12">
+          <div class="hero__inner-3">
+            <div class="sec-title-wrapper">
+              <h2 class="sec-sub-title">WEB DEVELOPER</h2>
+              <h3 class="sec-title title-left">MALIK</h3>
+              <h3 class="sec-title title-right">HUZAIFA</h3>
+            </div>
+            <div class="hero__text-3"></div>
+            <div class="scroll-down"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+  <div class="video-info">
+    <div class="video-intro">
+      <div class="intro-title">
+        <!-- Circular Certificate Image -->
+              <img loading="lazy" src="assets/imgs/logo/Untitled design (1).webp" alt="Certificate" class="certificate-img" />
+
+      </div>
+      <div class="btn_wrapper">
+        <a class="wc-btn-black btn-hover btn-item small-btn" href="#">
+          <span></span> Certified by
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </section>
+
+                <!-- Brand area start -->
+                <!-- === SECTION START: <section> — purpose: section block === -->
+                <section class="brand__area">
+                    <div class="container pt-140 pb-140">
+                        <div class="row">
+                            <div class="col-xxl-12">
+                                <h2 class="brand__title-3 title-anim">Trusted by innovative companies worldwide
+                                </h2>
+                                 <div class="brand__list-3">
+                                    <div class="brand__item-2 fade_bottom">
+                                        <a href="https://www.fiverr.com/malikhuzaifadev/buying?source=avatar_menu_profile"><img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/1 (2).webp" /></a>
+                                    </div>
+                                    <div class="brand__item-2 fade_bottom">
+                                     <a href="https://www.upwork.com/freelancers/~017f9fb5f4b63006a0">  <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/2 (1).webp" /></a> 
+                                    </div>
+                                    <div class="brand__item-2 fade_bottom">
+                                     <a href="https://www.linkedin.com/in/huzaifa-ahmad-3b7230285/?profileId=ACoAAEVEXTsB5UyP_wz3T_XWhfdFyKLQci7Xcmo">  <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/3 (1).webp" /></a> 
+                                    </div>
+                                    <div class="brand__item-2 fade_bottom">
+                                      <a href="https://dribbble.com/malikhuzaifaahmed8">  <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/4 (1).webp" /></a>
+                                    </div>
+                                    <div class="brand__item-2 fade_bottom">
+                                      <a href="https://www.freelancer.com/u/MalikHuzaifa89"> <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/5 (1).webp" /></a> 
+                                    </div>
+                                    <div class="brand__item-2 fade_bottom">
+                                      <a href="http://github.com/malikhuzaifaahmed8"> <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/6 (1).webp" /></a> 
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Brand area end -->
+                <!-- About area start -->
+                <!-- === SECTION START: <section> — purpose: section block === -->
+                <section class="about__area-3" id="about">
+                    <div class="container pt-140 pb-110">
+                        <div class="row">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                <div class="about__img-3">
+                                   <img loading="lazy" alt="About Thumbnail" data-speed="auto"
+                                        src="assets/imgs/about/WhatsApp Image 2025-09-03 at 1.55.03 AM (1).webp" />
+
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                <div class="sec-title-wrapper">
+                                    <h2 class="sec-sub-title title-anim">Who I Am</h2>
+                                    <h3 class="sec-title title-anim">I'm a passionate web developer.</h3>
+                                </div>
+                                <div class="sec-text-wrapper">
+                                    <div class="sec-text text-anim">
+                                        <p>I specialize in creating responsive, user-friendly websites and applications
+                                            that deliver exceptional user experiences. With expertise in front-end and
+                                            back-end technologies, I bring ideas to life through clean code and
+                                            innovative design solutions.</p>
+                                        <div class="btn_wrapper">
+                                            <a class="wc-btn-light btn-hover btn-item" href="#portfolio"><span></span>
+                                                View Portfolio <i class="fa-solid fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- About area end -->
+                <!-- Service area start -->
+                <!-- === SECTION START: <section> — purpose: section block === -->
+                <section class="service__area-3 pb-150" id="services">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xxl-12">
+                                <div class="sec-title-wrapper pt-130 text-anim">
+                                    <h2 class="sec-sub-title title-anim">Services</h2>
+                                    <h3 class="sec-title title-anim">My Development <br /> Services</h3>
+                                    <p>I offer comprehensive web development services tailored to meet your business
+                                        needs and help you establish a strong online presence.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xx-12">
+                                <div class="service__list-3">
+                                    <div class="service__item-3 service_animation">
+                                        <h3><a class="service__title-3" href="#skills">Web
+                                                <br />Development</a></h3>
+                                        <div class="service__content-3">
+                                            <p>Custom websites built with modern technologies for optimal performance
+                                                and user experience.
+                                            </p>
+                                            <ul class="">
+                                                <li>+ Responsive Design</li>
+                                                <li>+ CMS Integration</li>
+                                                <li>+ E-commerce Solutions</li>
+                                            </ul>
+                                        </div>
+                                        <div class="service__btn-3">
+                                            <div class="btn_wrapper">
+                                                <a class="wc-btn-black btn-hover btn-item"
+                                                    href="#skills"><span></span> Details
+                                                    <i class="fa-solid fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="service__hover-3"
+                                            style="background-image: url(assets/imgs/service/3/1.jpg);"></div>
+                                    </div>
+                                    <div class="service__item-3 service_animation">
+                                        <h3><a class="service__title-3"
+                                                href="#skills">Frontend <br/> Development</a></h3>
+                                        <div class="service__content-3">
+                                            <p>Creating interactive and engaging user interfaces with the latest
+                                                frontend technologies.
+                                            </p>
+                                            <ul class="">
+                                                <li>+ React.js Development</li>
+                                                <li>+ Vue.js Development</li>
+                                                <li>+ Angular Development</li>
+                                            </ul>
+                                        </div>
+                                        <div class="service__btn-3">
+                                            <div class="btn_wrapper">
+                                                <a class="wc-btn-black btn-hover btn-item"
+                                                    href="#skills"><span></span> Details
+                                                    <i class="fa-solid fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="service__hover-3"
+                                            style="background-image: url(assets/imgs/service/3/2.jpg);"></div>
+                                    </div>
+                                    <div class="service__item-3 service_animation">
+                                        <h3 class=""><a class="service__title-3" href="#">Backend
+                                                <br />Development</a></h3>
+                                        <div class="service__content-3">
+                                            <p>Robust server-side solutions and API development to power your
+                                                applications.
+                                            </p>
+                                            <ul class="">
+                                                <li>+ Node.js Development</li>
+                                                <li>+ PHP Development</li>
+                                                <li>+ Database Design</li>
+                                            </ul>
+                                        </div>
+                                        <div class="service__btn-3">
+                                            <div class="btn_wrapper">
+                                                <a class="wc-btn-black btn-hover btn-item"
+                                                    href="#skills"><span></span> Details
+                                                    <i class="fa-solid fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="service__hover-3"
+                                            style="background-image: url(assets/imgs/service/3/3.jpg);"></div>
+                                    </div>
+                                    <div class="service__item-3 service_animation">
+                                        <h3 class=""><a class="service__title-3" href="#">UI/UX
+                                                <br />Design</a></h3>
+                                        <div class="service__content-3">
+                                            <p>User-centered design solutions that enhance usability and create
+                                                memorable experiences.
+                                            </p>
+                                            <ul class="">
+                                                <li>+ Wireframing &amp; Prototyping</li>
+                                                <li>+ User Research</li>
+                                                <li>+ Interaction Design</li>
+                                            </ul>
+                                        </div>
+                                        <div class="service__btn-3">
+                                            <div class="btn_wrapper">
+                                                <a class="wc-btn-black btn-hover btn-item"
+                                                    href="#skills"><span></span> Details
+                                                    <i class="fa-solid fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="service__hover-3"
+                                            style="background-image: url(assets/imgs/service/3/4.jpg);"></div>
+                                    </div>
+                                    <div class="service3__img-wrap" >
+                                        <div class="service3__img"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+           
+                <!-- Service area end -->
+                 <section class="portfolio__area pb-140" id="portfolio" >
+                    <div class="container">
+                        <div class="row top_row">
+                            <h2 class="portfolio__text">work</h2>
+                            <div class="portfolio__list-1">
+                                <div class="portfolio__item">
+                                    <a href="service_app.html"><img loading="lazy" alt="Portfolio Image" class="mover"
+                                            src="assets/imgs/portfolio/project (1).webp" /></a>
+                                    <div class="portfolio__info">
+                                        <h3 class="portfolio__title">Sonic Musics</h3>
+                                        <p>02 May 2024</p>
+                                    </div>
+                                </div>
+                                <div class="portfolio__item">
+                                    <a href="service_app.html"><img loading="lazy" alt="Portfolio Image"
+                                            src="assets/imgs/portfolio/project (2).webp" /></a>
+                                    <div class="portfolio__info">
+                                        <h3 class="portfolio__title">E E-commerce Mobile Store</h3>
+                                        <p>09 Agust 2025</p>
+                                    </div>
+                                </div>
+                                <div class="portfolio__item">
+                                    <a href="service_app.html"><img loading="lazy" alt="Portfolio Image"
+                                            src="assets/imgs/portfolio/project (3).webp" /></a>
+                                    <div class="portfolio__info">
+                                        <h3 class="portfolio__title">Portfolio Website</h3>
+                                        <p>05 Sept 2025</p>
+                                    </div>
+                                </div>
+                                <div class="portfolio__item">
+                                    <a href="service_app.html"><img loading="lazy" alt="Portfolio Image"
+                                            src="assets/imgs/portfolio/project (4).webp" /></a>
+                                    <div class="portfolio__info">
+                                        <h3 class="portfolio__title">Portfolio Secret Happiness</h3>
+                                        <p>20 April 2024</p>
+                                    </div>
+                                </div>
+                                <div class="portfolio__item">
+                                    <a href="service_app.html"><img loading="lazy" alt="Portfolio Image"
+                                            src="assets/imgs/portfolio/Project (5).webp" /></a>
+                                    <div class="portfolio__info">
+                                        <h3 class="portfolio__title">Portfolio Secret Happiness</h3>
+                                        <p>04 jully 2024</p>
+                                    </div>
+                                </div>
+                                <div class="portfolio__item">
+                                    <a href="service_app.html"><img loading="lazy" alt="Portfolio Image"
+                                            src="assets/imgs/portfolio/Project (6).webp" /></a>
+                                    <div class="portfolio__info">
+                                        <h3 class="portfolio__title">Portfolio Secret Happiness</h3>
+                                        <p>10 May 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row_bottom">
+                            <div class="col-xxl-12">
+                                <div class="portfolio__btn btn_wrapper" data-lag="0.2" data-speed="1">
+                                    <a class="wc-btn-secondary btn-hover btn-item"
+                                        href="https://github.com/malikhuzaifaahmed8"><span></span>Go To<br /> GitHub
+                                        <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="brand__area">
+                    <div class="container g-0 line pt-140 pb-130">
+                        <span class="line-3"></span>
+                        <div class="row">
+                            <div class="col-xxl-12">
+                                <div class="sec-title-wrapper">
+                                    <h2 class="sec-sub-title title-anim">portfolio authorities</h2>
+                                    <h3 class="sec-title title-anim"> I’m Actively Building on Top  <br /> Freelancing Platforms
+                                </h3>
+                                </div>
+                            </div>
+                            <div class="col-xxl-12">
+                                <div class="brand__list">
+                                    <div class="brand__item fade_bottom">
+                                      <a href="http://fiverr.com/malikhuzaifadev/buying?source=avatar_menu_profile"> <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/1 (2).webp" /></a> 
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                       <a href="https://www.upwork.com/freelancers/~017f9fb5f4b63006a0"> <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/1 (2).webp" /></a>
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                      <a href="https://www.linkedin.com/in/huzaifa-ahmad-3b7230285/?profileId=ACoAAEVEXTsB5UyP_wz3T_XWhfdFyKLQci7Xcmo"> <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/3 (1).webp" /></a>
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                       <a href="https://dribbble.com/malikhuzaifaahmed8"> <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/4 (1).webp" /></a>
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                      <a href="https://www.freelancer.com/u/MalikHuzaifa89">  <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/5 (1).webp" /></a>
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                       <a href="https://github.com/malikhuzaifaahmed8"> <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/6 (1).webp" /></a>
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                        <a href="https://www.linkedin.com/in/huzaifa-ahmad-3b7230285/?profileId=ACoAAEVEXTsB5UyP_wz3T_XWhfdFyKLQci7Xcmo"><img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/3 (1).webp" /></a>
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                       <a href="https://dribbble.com/malikhuzaifaahmed8"> <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/4 (1).webp" /></a>
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                     <a href="https://www.freelancer.com/u/MalikHuzaifa89">   <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/5 (1).webp" /></a>
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                      <a href="https://github.com/malikhuzaifaahmed8">  <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/6 (1).webp" /></a>
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                       <a href="fiverr.com/malikhuzaifadev/buying?source=avatar_menu_profile"> <img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/1 (2).webp" /></a>
+                                    </div>
+                                    <div class="brand__item fade_bottom">
+                                       <a href="https://www.upwork.com/freelancers/~017f9fb5f4b63006a0"><img loading="lazy" alt="Brand Logo" src="assets/imgs/brand/2 (1).webp" /></a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Skills area start -->
+                <!-- === SECTION START: <section> — purpose: section block === -->
+                <section class="price__area pt-130 pb-140" id="skills">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                <div class="sec-title-wrapper">
+                                    <h2 class="sec-sub-title title-anim">My Skills</h2>
+                                    <h3 class="sec-title title-anim">Technical <br />Expertise</h3>
+                                </div>
+                                <div class="faq__list-3">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button aria-controls="collapseOne" aria-expanded="true"
+                                                    class="accordion-button" data-bs-target="#collapseOne"
+                                                    data-bs-toggle="collapse" type="button">
+                                                    Frontend Development
+                                                </button>
+                                            </h2>
+                                            <div aria-labelledby="headingOne" class="accordion-collapse collapse show"
+                                                data-bs-parent="#accordionExample" id="collapseOne">
+                                                <div class="accordion-body">
+                                                    <p>Expertise in HTML5, CSS3, JavaScript, React, Vue.js, and Angular.
+                                                        Creating responsive, interactive user interfaces that work
+                                                        seamlessly across all devices and browsers.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button aria-controls="collapseTwo" aria-expanded="false"
+                                                    class="accordion-button collapsed" data-bs-target="#collapseTwo"
+                                                    data-bs-toggle="collapse" type="button">
+                                                    Backend Development
+                                                </button>
+                                            </h2>
+                                            <div aria-labelledby="headingTwo" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample" id="collapseTwo">
+                                                <div class="accordion-body">
+                                                    <p>Proficient in Node.js, Express, PHP, Python, and database
+                                                        management with MySQL, MongoDB, and PostgreSQL. Building robust
+                                                        server-side applications and APIs.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button aria-controls="collapseThree" aria-expanded="false"
+                                                    class="accordion-button collapsed" data-bs-target="#collapseThree"
+                                                    data-bs-toggle="collapse" type="button">
+                                                    UI/UX Design
+                                                </button>
+                                            </h2>
+                                            <div aria-labelledby="headingThree" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample" id="collapseThree">
+                                                <div class="accordion-body">
+                                                    <p>Creating user-centered designs with Figma, Adobe XD, and Sketch.
+                                                        Focusing on usability, accessibility, and creating intuitive
+                                                        user experiences.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFour">
+                                                <button aria-controls="collapseFour" aria-expanded="false"
+                                                    class="accordion-button collapsed" data-bs-target="#collapseFour"
+                                                    data-bs-toggle="collapse" type="button">
+                                                    DevOps &amp; Deployment
+                                                </button>
+                                            </h2>
+                                            <div aria-labelledby="headingFour" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample" id="collapseFour">
+                                                <div class="accordion-body">
+                                                    <p>Experience with Git, Docker, AWS, and various deployment
+                                                        strategies. Ensuring smooth deployment and maintenance of web
+                                                        applications.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFive">
+                                                <button aria-controls="collapseFive" aria-expanded="false"
+                                                    class="accordion-button collapsed" data-bs-target="#collapseFive"
+                                                    data-bs-toggle="collapse" type="button">
+                                                    E-commerce Solutions
+                                                </button>
+                                            </h2>
+                                            <div aria-labelledby="headingFive" class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExample" id="collapseFive">
+                                                <div class="accordion-body">
+                                                    <p>Building online stores with Shopify, WooCommerce, and custom
+                                                        solutions. Creating seamless shopping experiences with secure
+                                                        payment integrations.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                <div class="price__table">
+                                    <div class="price__item animation_from_bottom">
+                                        <div class="price__icon"><span><i class="fa-solid fa-check"></i></span></div>
+                                        <div class="price__info">
+                                            <h2 class="price__type">Website Package</h2>
+                                            <h3 class="price__title">Basic to Advanced</h3>
+                                            <p>Custom websites starting from basic brochure sites to complex web
+                                                applications with advanced functionality.</p>
+                                        </div>
+                                        <div class="price__amount">
+                                            <h4 class="best-value">Starting at</h4>
+                                            <p>$***<span></span></p>
+                                        </div>
+                                    </div>
+                                    <div class="price__item animation_from_top">
+                                        <div class="price__icon"><span><i class="fa-solid fa-check"></i></span></div>
+                                        <div class="price__info">
+                                            <h2 class="price__type">E-commerce Package</h2>
+                                            <h3 class="price__title">Online Stores</h3>
+                                            <p>Complete e-commerce solutions with product management, shopping cart, and
+                                                secure payment integration.</p>
+                                        </div>
+                                        <div class="price__amount">
+                                            <p>$****<span></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price__btn btn_wrapper">
+                                    <a class="wc-btn-black btn-hover btn-item" href="#contact"><span></span> Get
+                                        <br />Custom Quote <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Skills area end -->
+                <!-- Workflow area start -->
+                <!-- === SECTION START: <section> — purpose: section block === -->
+                <section class="workflow__area-3">
+                    <div class="workflow__wrapper-3">
+                        <div class="choose-wrapper wf_panel">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xxl-12">
+                                        <div class="choose-title-wrapper">
+                                            <h2 class="choose-title title-anim">why <br /> choose me</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="research__area wf_panel pt-150">
+                            <div class="container inner_content">
+                                <div class="row">
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                        <div class="sec-title-wrapper">
+                                            <h2 class="sec-sub-title">why <br />choose me</h2>
+                                            <h3 class="sec-title">Technical Expertise, Creative Solutions, &amp;
+                                                Reliable Partnership</h3>
+                                            <p>I combine technical proficiency with creative problem-solving to deliver
+                                                web solutions that not only look great but also perform exceptionally
+                                                well across all devices and platforms.
+                                            </p>
+                                        </div>
+                                        <ul class="research__tools">
+                                            <li><a href="#">HTML5/CSS3</a></li>
+                                            <li><a href="#">JavaScript</a></li>
+                                            <li><a href="#">React</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                        <div class="research__list">
+                                            <div class="research__item">
+                                                <div class="research__number">
+                                                    <span>95%</span>
+                                                </div>
+                                                <div class="research__info">
+                                                    <h4 class="research__title">Client Satisfaction</h4>
+                                                    <p>Consistently delivering projects that exceed client expectations
+                                                        and requirements.</p>
+                                                </div>
+                                            </div>
+                                            <div class="research__item">
+                                                <div class="research__number">
+                                                    <span>90%</span>
+                                                </div>
+                                                <div class="research__info">
+                                                    <h4 class="research__title">On-Time Delivery</h4>
+                                                    <p>Meeting deadlines without compromising on quality or
+                                                        functionality.</p>
+                                                </div>
+                                            </div>
+                                            <div class="research__item">
+                                                <div class="research__number">
+                                                    <span>85%</span>
+                                                </div>
+                                                <div class="research__info">
+                                                    <h4 class="research__title">Project Efficiency</h4>
+                                                    <p>Optimizing workflows to deliver maximum value within project
+                                                        constraints.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="counter__area-3 wf_panel">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xxl-12">
+                                        <div class="sec-title-wrapper">
+                                            <h2 class="sec-sub-title">My <br />Achievements</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+                                        <div class="counter__wrapper-3">
+                                            <div class="counter__item-3">
+                                                <h2 class="counter__number">150+</h2>
+                                                <p>Projects <br /> Completed</p>
+                                            </div>
+                                            <div class="counter__item-3">
+                                                <h2 class="counter__number">50+</h2>
+                                                <p>Happy <br />Clients</p>
+                                            </div>
+                                            <div class="counter__item-3">
+                                                <h2 class="counter__number">5</h2>
+                                                <p>Years <br />Experience</p>
+                                            </div>
+                                            <div class="counter__item-3">
+                                                <h2 class="counter__number">12</h2>
+                                                <p>Awards <br />Received</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
+                                        <div class="counter__img-3">
+                                             <img loading="lazy" alt="Counter Image" src="assets/imgs/thumb/counter-3.webp" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CTA area start -->
+                        <div class="cta__area-3 wf_panel">
+                            <div class="container pt-150 pb-150">
+                                <div class="row">
+                                    <div class="col-xxl-12">
+                                        <div class="cta__content-3">
+                                            <p class="cta__sub-title-2">Ready to start your project?</p>
+                                            <h2 class="cta__title-2">Let's create something amazing together!</h2>
+                                            <div class="btn_wrapper">
+                                                <a class="wc-btn-black btn-hover btn-item"
+                                                    href="#contact"><span></span>Get <br />In Touch <i
+                                                        class="fa-solid fa-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CTA area end -->
+                    </div>
+                </section>
+                <!-- Workflow area end -->
+                <!-- Testimonial area start -->
+                <!-- === SECTION START: <section> — purpose: section block === -->
+                <section class="testimonial__area-3" id="testimonials">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xxl-12">
+                                <div class="swiper testimonial__slider-3">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide testimonial__slide-3">
+                                            <p>Malik delivered an exceptional website that perfectly captured our
+                                                vision. His attention to detail and technical expertise made the entire
+                                                process smooth and efficient.</p>
+                                            <h2 class="client__name-3">Sarah Johnson</h2>
+                                            <h3 class="client__role-3">CEO, TechSolutions</h3>
+                                        </div>
+                                        <div class="swiper-slide testimonial__slide-3">
+                                            <p>Working with Malik was a great experience. He transformed our outdated
+                                                website into a modern, responsive platform that has significantly
+                                                increased our conversions.</p>
+                                            <h2 class="client__name-3">Michael Chen</h2>
+                                            <h3 class="client__role-3">Marketing Director</h3>
+                                        </div>
+                                        <div class="swiper-slide testimonial__slide-3">
+                                            <p>Malik's development skills are outstanding. He delivered our complex web
+                                                application ahead of schedule and exceeded all our expectations.</p>
+                                            <h2 class="client__name-3">Emily Rodriguez</h2>
+                                            <h3 class="client__role-3">Product Manager</h3>
+                                        </div>
+                                        <div class="swiper-slide testimonial__slide-3">
+                                            <p>I highly recommend Malik for any web development project. His technical
+                                                knowledge and creative problem-solving skills are impressive.</p>
+                                            <h2 class="client__name-3">David Wilson</h2>
+                                            <h3 class="client__role-3">Startup Founder</h3>
+                                        </div>
+                                        <div class="swiper-slide testimonial__slide-3">
+                                            <p>The website Malik created for us has received countless compliments. His
+                                                design sensibility and technical execution are truly top-notch.</p>
+                                            <h2 class="client__name-3">Lisa Thompson</h2>
+                                            <h3 class="client__role-3">Creative Director</h3>
+                                        </div>
+                                    </div>
+                                    <div class="next-button swipper-btn"><i class="fa-solid fa-arrow-left"></i></div>
+                                    <div class="prev-button swipper-btn"><i class="fa-solid fa-arrow-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial__images-3 animation_image_zoom">
+                        <img loading="lazy" alt="testimonial Image" class="testimonial3__img" src="assets/imgs/testimonial/blog_4.webp" />
+                        <img loading="lazy" alt="testimonial Image" class="testimonial3__img-2"
+                            src="assets/imgs/testimonial/slide_thumb_1.webp" />
+                        <img loading="lazy" alt="testimonial Image" class="testimonial3__img-3"
+                            src="assets/imgs/testimonial/special_cource_1.webp" />
+                        <img loading="lazy" alt="testimonial Image" class="testimonial3__img-4"
+                            src="assets/imgs/testimonial/special_cource_2.webp" />
+                        <img loading="lazy" alt="testimonial Image" class="testimonial3__img-5"
+                            src="assets/imgs/testimonial/special_cource_3.webp" />
+                        <img loading="lazy" alt="testimonial Image" class="testimonial3__img-6"
+                            src="assets/imgs/testimonial/testimonial_img_1.webp" />
+                    </div>
+                </section>
+                <!-- Testimonial area end -->
+                <!-- Blog area start -->
+                <!-- === SECTION START: <section> — purpose: section block === -->
+                <section class="blog__area-3 pb-140 blog__animation" id="blog">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xxl-12">
+                                <div class="sec-title-wrapper text-anim pt-130">
+                                    <h2 class="sec-sub-title">Latest Insights</h2>
+                                    <h3 class="sec-title title-anim">Web Development <br />Blog</h3>
+                                    <p>Sharing knowledge, insights, and latest trends in web development, design, and
+                                        technology. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                <!-- === SECTION START: <article> — purpose: article block === -->
+                                <article class="blog__item-3">
+                                    <div class="blog__img-wrapper-3">
+                                        <a href="blog-details.html">
+                                            <div class="img-box">
+                                                <img loading="lazy" alt="Blog Thumbnail" class="image-box__item"
+                                                    src="assets/imgs/blog/blog_2.webp" />
+                                                <img loading="lazy" alt="BLog Thumbnail" class="image-box__item"
+                                                    src="assets/imgs/blog/blog_2.webp" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="blog__info-3">
+                                        <h4 class="blog__meta"><a href="blog-details.html">Web Development </a> . 02 MAR
+                                            2024</h4>
+                                        <h5><a class="blog__title-3" href="blog-details.html">The Future of React:
+                                                What's New in 2024</a></h5>
+                                        <a class="blog__btn" href="blog-details.html">Read More <span><i
+                                                    class="fa-solid fa-arrow-right"></i></span></a>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                <!-- === SECTION START: <article> — purpose: article block === -->
+                                <article class="blog__item-3">
+                                    <div class="blog__img-wrapper-3">
+                                        <a href="blog-details.html">
+                                             <div class="img-box">
+                                                <img loading="lazy" alt="Blog Thumbnail" class="image-box__item"
+                                                    src="assets/imgs/blog/blog_3.webp" />
+                                                <img loading="lazy" alt="BLog Thumbnail" class="image-box__item"
+                                                    src="assets/imgs/blog/blog_3.webp" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="blog__info-3">
+                                        <h4 class="blog__meta"><a href="blog-details.html">UI/UX Design </a> . 28 FEB
+                                            2024</h4>
+                                        <h5><a class="blog__title-3" href="blog-details.html">Designing for
+                                                Accessibility: Best Practices</a></h5>
+                                        <a class="blog__btn" href="blog-details.html">Read More <span><i
+                                                    class="fa-solid fa-arrow-right"></i></span></a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Blog area end -->
+            </main>
+            <!-- Contact area start -->
+            <!-- === SECTION START: <section> — purpose: section block === -->
+            <section class="contact__area-6" id="contact">
+                <div class="container g-0 line pt-120 pb-110">
+                    <span class="line-3"></span>
+                    <div class="row">
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                            <div class="sec-title-wrapper">
+                                <h2 class="sec-title-2 animation__char_come" style="color: var(--primary);">Let’s get in
+                                    touch</h2>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                            <div class="contact__text">
+                                <p>Great! We're excited to hear from you and let's start something special togerter.
+                                    call us for any inquery.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row contact__btm">
+                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+                            <div class="contact__info">
+                                <h3 class="sub-title-anim-top animation__word_come">Don't be afraid man ! <br />say
+                                    hello</h3>
+                                <ul>
+                                    <li><a href="tel:03188151613">+(92) -3188151613</a></li>
+                                    <li><a href="malikhuzaifaahmed8@gmail.com">malikhuzaifaahmed8@gmail.com</a></li>
+                                    <li><span>Mianwali , Punjab<br /> PAKISTAN</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
+                            <div class="contact__form">
+                                <!-- === SECTION START: <form> — purpose: form block === -->
+                                <form action="assets/mail.php" method="POST">
+                                    <div class="row g-3">
+                                        <div class="col-xxl-6 col-xl-6 col-12">
+                                            <input name="name" placeholder="Name *" type="text" />
+                                        </div>
+                                        <div class="col-xxl-6 col-xl-6 col-12">
+                                            <input name="email" placeholder="Email *" type="email" />
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-xxl-6 col-xl-6 col-12">
+                                            <input name="phone" placeholder="Phone" type="tel" />
+                                        </div>
+                                        <div class="col-xxl-6 col-xl-6 col-12">
+                                            <input name="subject" placeholder="Subject *" type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <textarea name="message" placeholder="Messages *"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <div class="btn_wrapper">
+                                                <button class="wc-btn-primary btn-hover btn-item"><span></span> Send
+                                                    <br />Messages <i class="fa-solid fa-arrow-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact area end -->
+
+            <!-- Footer area start -->
+            <!-- === SECTION START: <footer> — purpose: footer block === -->
+            <footer class="footer__area-3">
+                <div class="footer__top-3">
+                    <div class="footer__top-wrapper-3">
+                        <div class="footer__logo-3 pt-120">
+                            <div class="navigation__logo">
+
+                                <h1 class="navigation__logo-title" style="color: white;"> <img loading="lazy"
+                                        src="assets/imgs/logo/M-removebg-preview1.webp" width="200px" height="200px"
+                                       style="margin-left: 70px; margin-top: 30px;" alt=""></h1>
+                            </div>
+                            <br />
+                            <br />
+                            <!-- <p>Web developer passionate about creating digital experiences that make a difference. Let's
+                                build something amazing together.
+                            </p> -->
+                        </div>
+                        <div class="footer__social-3">
+                            <ul>
+                                <li><a href="https://github.com/malikhuzaifaahmed8">GitHub</a></li>
+                                <li><a href="https://www.linkedin.com/in/huzaifa-ahmad-3b7230285/?profileId=ACoAAEVEXTsB5UyP_wz3T_XWhfdFyKLQci7Xcmo">LinkedIn</a></li>
+                                <li><a href="https://dribbble.com/malikhuzaifaahmed8">Dribbble</a></li>
+                                <li><a href="#">Twitter</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__contact-3">
+                            <a class="end" href="contact.html">Let's talk</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__btm-3">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xxl-4 col-xl-4 col-lg-4">
+                                <div class="footer__copyright-3">
+                                    <p>© 2024 - 2025 | Alrights reserved by <a href="#" target="_blank">Malik
+                                            Huzaifa</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-xxl-8 col-xl-8 col-lg-8">
+                                <div class="footer__nav-2">
+                                    <ul class="footer-menu-2 menu-anim">
+                                        <li><a href="#about">about me</a></li>
+                                        <li><a href="#contact">contact</a></li>
+                                        <li><a href="#portfolio">portfolio</a></li>
+                                        <li><a href="#services">services</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer area end -->
+        </div>
+    </div>
+     <!-- All JS files -->
+    <script src="assets/js/jquery-3.6.0.min.js" defer></script>
+    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/js/swiper-bundle.min.js" defer></script>
+    <script src="assets/js/counter.js" defer></script>
+    <script src="assets/js/gsap.min.js" defer></script>
+    <script src="assets/js/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/ScrollToPlugin.min.js" defer></script>
+    <script src="assets/js/ScrollSmoother.min.js" defer></script>
+    <script src="assets/js/SplitText.min.js" defer></script>
+    <script src="assets/js/chroma.min.js" defer></script>
+    <script src="assets/js/mixitup.min.js" defer></script>
+    <script src="assets/js/vanilla-tilt.js" defer></script>
+    <script src="assets/js/jquery.meanmenu.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js" defer></script>
+
+    <script src="assets/js/bubble.js" defer></script>
+<!-- Smooth scroll & animation fix -->
+<script>
+(function(){
+  const header = document.querySelector('header, .header, .site-header, #header');
+  const headerHeight = () => header ? header.getBoundingClientRect().height : 0;
+
+  function scrollToHash(hash, push=true){
+    if(!hash) return;
+    const id = hash.startsWith('#') ? hash.slice(1) : hash;
+    const target = document.getElementById(id);
+    if(!target) return;
+    const rect = target.getBoundingClientRect();
+    const absoluteTop = window.scrollY + rect.top;
+    const scrollTarget = Math.max(absoluteTop - headerHeight() - 10, 0);
+    window.scrollTo({top: scrollTarget, behavior: 'smooth'});
+    if(push) history.pushState(null, '', '#' + id);
+  }
+
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    const href = a.getAttribute('href');
+    if(href && href.startsWith('#')){
+      e.preventDefault();
+      scrollToHash(href);
+    }
+  }, {passive:false});
+
+  window.addEventListener('load', function(){
+    if(location.hash){
+      setTimeout(()=> scrollToHash(location.hash, false), 50);
+    }
+  });
+
+  window.addEventListener('popstate', function(){
+    if(location.hash){
+      scrollToHash(location.hash, false);
+    } else {
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+  });
+
+  // IntersectionObserver for reveal animations
+  const reveals = document.querySelectorAll('.reveal, [data-animate]');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    reveals.forEach(r=> io.observe(r));
+  } else {
+    reveals.forEach(r=> r.classList.add('revealed'));
+  }
+})();
+</script>
+
+</body>
+
+</html>

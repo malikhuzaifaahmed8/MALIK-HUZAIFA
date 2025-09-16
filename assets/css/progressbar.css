@@ -1,0 +1,441 @@
+/*
+File: MALIK HUZAIFA/assets/css/progressbar.css
+Type: CSS stylesheet
+Root details: Styles for the website. Major rule blocks are separated with 10 blank lines to ease navigation.
+Edit note: Section comments inserted before selectors; 10-line gaps added between top-level rules.
+*/
+
+/* === SECTION START: .sonny_progressbar { === */
+.sonny_progressbar {
+    margin-bottom: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: .sonny_progressbar p.title { === */
+
+.sonny_progressbar p.title {
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0;
+    padding: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: .sonny_progressbar .bar-container { === */
+
+.sonny_progressbar .bar-container {
+    position: relative;
+    height: 40px;
+    border-radius: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: .sonny_progressbar .bar-container.shadow { === */
+
+.sonny_progressbar .bar-container.shadow {
+    -moz-box-shadow: 0px 5px 7px -3px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0px 5px 7px -3px rgba(0, 0, 0, .5);
+    box-shadow: 0px 5px 7px -3px rgba(0, 0, 0, .5);
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: .sonny_progressbar .backgroundBar { === */
+
+.sonny_progressbar .backgroundBar {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: .sonny_progressbar .bar { === */
+
+.sonny_progressbar .bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: .sonny_progressbar .targetBar { === */
+
+.sonny_progressbar .targetBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    -webkit-animation: Animation 2s infinite ease-in-out;
+    -moz-animation: Animation 2s infinite ease-in-out;
+    animation: Animation 2s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: .sonny_progressbar .targetBar.loader { === */
+
+.sonny_progressbar .targetBar.loader {
+    -webkit-animation: AnimationB 4s infinite ease-in-out;
+    -moz-animation: AnimationB 4s infinite ease-in-out;
+    animation: AnimationB 4s infinite ease-in-out;
+    background-image: url('animated-overlay.gif');
+}
+
+.sonny_progressbar .bar-container.border .bar,
+.sonny_progressbar .bar-container.border .targetBar,
+/* === SECTION START: .sonny_progressbar .bar-container.border .backgroundBar { === */
+.sonny_progressbar .bar-container.border .backgroundBar {
+    border-bottom: 3px solid rgba(0, 0, 0, .2);
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: .sonny_progressbar .progress-percent { === */
+
+.sonny_progressbar .progress-percent {
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: -24px;
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: @keyframes Animation { === */
+
+@keyframes Animation {
+/* === SECTION START: 0% { === */
+    0% {
+        opacity: .4;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 50% { === */
+    50% {
+        opacity: 1;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 100% { === */
+    100% {
+        opacity: .4;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: @-moz-keyframes Animation { === */
+
+@-moz-keyframes Animation {
+/* === SECTION START: 0% { === */
+    0% {
+        opacity: .4;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 50% { === */
+    50% {
+        opacity: 1;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 100% { === */
+    100% {
+        opacity: .4;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: @-webkit-keyframes Animation { === */
+
+@-webkit-keyframes Animation {
+/* === SECTION START: 0% { === */
+    0% {
+        opacity: .4;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 50% { === */
+    50% {
+        opacity: 1;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 100% { === */
+    100% {
+        opacity: .4;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: @keyframes AnimationB { === */
+
+@keyframes AnimationB {
+/* === SECTION START: 0% { === */
+    0% {
+        opacity: .01;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 50% { === */
+    50% {
+        opacity: .1;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 100% { === */
+    100% {
+        opacity: .01;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: @-moz-keyframes AnimationB { === */
+
+@-moz-keyframes AnimationB {
+/* === SECTION START: 0% { === */
+    0% {
+        opacity: .01;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 50% { === */
+    50% {
+        opacity: .1;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 100% { === */
+    100% {
+        opacity: .01;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: @-webkit-keyframes AnimationB { === */
+
+@-webkit-keyframes AnimationB {
+/* === SECTION START: 0% { === */
+    0% {
+        opacity: .01;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 50% { === */
+    50% {
+        opacity: .1;
+    }
+
+
+
+
+
+
+
+
+
+
+/* === SECTION START: 100% { === */
+    100% {
+        opacity: .01;
+    }
+}
