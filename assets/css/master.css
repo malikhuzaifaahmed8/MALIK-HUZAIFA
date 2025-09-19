@@ -56404,3 +56404,39 @@ ul.mega-menu-2.woocomerce-megamenu {
     border-left: 1px solid var(--secondary);
 }
 
+
+
+
+
+/* Responsive bubble & text fix for hero */
+@media (max-width: 768px) {
+  .hero__area-2 .hero2-shape,
+  .hero__area-2 .shape,
+  .hero__area-3 .shape {
+    width: 80px;  /* not too small */
+    height: 80px;
+  }
+
+  /* Big, fluid hero title */
+  .hero__area-2 .sec-title,
+  .hero__area-3 .sec-title {
+    font-size: clamp(48px, 6vw, 40px);
+  }
+}
+
+@media (max-width: 320px) {
+  .hero__area-2 .hero2-shape,
+  .hero__area-2 .shape,
+  .hero__area-3 .shape {
+    width: 70px;  /* only slightly smaller */
+    height: 70px;
+  }
+
+  /* Still large but fits screen */
+  .hero__area-2 .sec-title,
+  .hero__area-3 .sec-title {
+    font-size: clamp(44px, 7vw, 34px);
+  }
+
+}
+
